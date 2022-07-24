@@ -1,5 +1,5 @@
-export CSV_PATH="/home/mike/longterm_data/Programming/Python/etl_example/test_data/3033900.csv"
-export OUTPUT_PATH="/home/mike/longterm_data/Programming/Python/etl_example/initial_transform_2/"
+export CSV_PATH="test_data/3033900.csv"
+export OUTPUT_PATH="initial_transform/"
 export DB_USERNAME="noaa_etl"
 export DB_PSWD="secret"
 export DB_HOST="localhost"
