@@ -65,15 +65,3 @@ def parse_args(args):
 if __name__ == "__main__":
     parsed_args = parse_args(sys.argv[1:])
     parsed_args.func(parsed_args)
-
-
-
-
-
-# CSV_PATH = "/home/mike/longterm_data/Programming/Python/etl_example/test_data/3033900.csv"
-# OUTPUT_PATH = "/home/mike/longterm_data/Programming/Python/etl_example/initial_transform_2/"
-# DB_CONN_URI = "postgresql://noaa_etl:secret@localhost:5432/noaa_etl"
-#
-# init_db()
-# load_csv(CSV_PATH, OUTPUT_PATH, DB_CONN_URI)
-# run_upsert(DB_CONN_URI)
