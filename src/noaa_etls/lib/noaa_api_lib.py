@@ -2,7 +2,6 @@ import itertools
 import os
 import requests
 
-# My personal token don't be a dick
 TOKEN = os.environ.get("NOAA_TOKEN")
 
 BASE_URL = "https://www.ncdc.noaa.gov/cdo-web/api/v2/"
@@ -200,13 +199,13 @@ def get_data(
     return r.json()["results"]
 
 
-def do_a_test():
-    dat = get_data(stationid="GHCND:USW00023036", limit=100, startdate="2009-07-01", enddate="2010-06-30", datasetid="NORMAL_HLY")
-    d = get_data_sets()
-    dc = get_data_categories()
-    l = get_locations()
-    lc = get_location_categories()
-    s = get_stations(datasetid="NORMAL_HLY", sortfield="name")
-
-do_a_test()
+# def do_a_test():
+#     dat = get_data(stationid="GHCND:USW00023036", limit=100, startdate="2009-07-01", enddate="2010-06-30", datasetid="NORMAL_HLY")
+#     d = get_data_sets()
+#     dc = get_data_categories()
+#     l = get_locations()
+#     lc = get_location_categories()
+#     s = get_stations(datasetid="NORMAL_HLY", sortfield="name")
+#
+# do_a_test()
 
