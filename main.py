@@ -24,7 +24,7 @@ def execute_init_db(_args):
 def execute_load_csv(args):
     logger.info("loading_csv")
     db_uri = build_db_uri(args)
-    load_csv(args.input_path, args.output_location, db_uri)
+    load_csv(args.input_path, args.output_location, db_uri, args.year)
 
 
 def execute_upsert(args):
@@ -49,6 +49,7 @@ def parse_args(args):
     load_csv_parser.add_argument("-H", "--host", help="db host", default="localhost")
     load_csv_parser.add_argument("-p", "--port", help="db port", default="5432")
     load_csv_parser.add_argument("-d", "--database", help="db to connect to", default="noaa_etl")
+    load_csv_parser.add_argument("-y", "--year", help="year csv covers", default=2010)
     load_csv_parser.set_defaults(func=execute_load_csv)
 
     upsert_staging_parser = subparsers.add_parser("upsert_staging_data", help="Upsert staging_data")

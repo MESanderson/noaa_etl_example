@@ -6,12 +6,11 @@ import logging
 logger = logging.getLogger("noaa_csv_to_staging")
 
 
-def load_csv(csv_path, output_path, db_conn_uri):
+def load_csv(csv_path, output_path, db_conn_uri, year):
     db_conn = create_engine(db_conn_uri)
-    main_df = load_csv_raw(csv_path, 2010)
+    main_df = load_csv_raw(csv_path, year)
     split_hourly_data_into_categories(main_df, output_path)
     raw_split_file_to_db(db_conn, output_path)
 
 
-# load_csv(CSV_PATH, OUTPUT_PATH)
 
